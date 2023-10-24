@@ -1,21 +1,22 @@
 name: Welcome Issue
+
 on:
   issues:
     types: [opened]
 
 jobs:
-  welcome:
+  welcomeIssue:
     runs-on: ubuntu-latest
     steps:
-    - name: Comment Issue
-      uses: actions/github-script@v5
-      with:
-        script: |
-          const { issue } = context;
-          const message = `Hello @${issue.user.login}, thank you for raising an issue! :tada: Our maintainers will get back to you as soon as possible. In the meantime, feel free to check out our contributing guidelines and code of conduct to learn more about how you can get involved. Welcome to the community! :heart:`;
-          github.rest.issues.createComment({
-            issue_number: issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: message
-          });
+      - name: Comment Issue
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { issue } = context;
+            const message = `Hello @${issue.user.login}, thank you for raising this issue! We appreciate your input.`;
+            github.rest.issues.createComment({
+              issue_number: issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
