@@ -18,9 +18,9 @@ body:
       label: "🔁 Reproduction steps"
       description: "Please describe the steps to reproduce the issue, especially if it's related to code or content errors."
       placeholder: |
-        1. 📄 Open file '...'|
-        2. ⌨️ Run the command '....'|
-        3. ❗ See error message '....'|
+        1. 📄 Open file '...'
+        2. ⌨️ Run the command '....'
+        3. ❗ See error message '....'
     validations:
       required: true
   - type: textarea
