@@ -1,21 +1,24 @@
-name: Welcome Issue
+name: Welcome
 
 on:
   issues:
     types: [opened]
+  pull_request:
+    types: [opened]
 
 jobs:
-  welcomeIssue:
+  welcome:
     runs-on: ubuntu-latest
     steps:
-      - name: Comment Issue
+      - name: Comment
         uses: actions/github-script@v5
         with:
           script: |
-            const { issue } = context;
-            const message = `Hello @${issue.user.login}, thank you for raising this issue! We appreciate your input.`;
+            const isIssue = context.payload.issue !== undefined;
+            const item = isIssue ? context.payload.issue : context.payload.pull_request;
+            const message = `Hello @${item.user.login}, thank you for your ${isIssue ? 'issue' : 'pull request'}! We appreciate your contribution.`;
             github.rest.issues.createComment({
-              issue_number: issue.number,
+              issue_number: item.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: message
