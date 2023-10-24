@@ -1,5 +1,5 @@
 name: "📜 Documentation Issue"
-description: "✏️ Highlight areas of improvement, errors, or updates needed in the documentation."
+description: "Highlight areas of improvement, errors, or updates needed in the documentation."
 title: "📘 [DOCS] - <title>"
 labels:
   - "documentation"
