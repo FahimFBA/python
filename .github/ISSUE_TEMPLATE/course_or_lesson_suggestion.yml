@@ -1,0 +1,38 @@
+name: "🎓 Course/Lesson Suggestion"
+description: Propose a new lesson or course idea for inclusion.
+title: "📚 [COURSE/LESSON SUGGESTION] - <title>"
+labels: 
+  - "course-suggestion"
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Summary"
+      description: Provide a brief description of the course or lesson.
+      placeholder: Describe the main topics or skills the course/lesson would cover.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: "Relevance"
+      description: Why is this course or lesson important? Who would benefit from it?
+      placeholder: Discuss the relevance and potential audience of your suggestion.
+    validations:
+      required: true
+  - type: textarea
+    id: potential_drawbacks
+    attributes:
+      label: "Potential Drawbacks"
+      description: Are there any potential drawbacks or challenges associated with this course/lesson?
+      placeholder: Consider factors like complexity, niche audience, existing similar courses, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: unresolved_question
+    attributes:
+      label: "Unresolved Questions"
+      description: Are there aspects of the course/lesson that you're unsure about?
+      placeholder: List any uncertainties or aspects you'd like feedback on.
+    validations:
+      required: false

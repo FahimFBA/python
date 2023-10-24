@@ -1,0 +1,53 @@
+name: "📜 Documentation Issue"
+description: "Highlight areas of improvement, errors, or updates needed in the documentation."
+title: "📘 [DOCS] - <title>"
+labels:
+  - "documentation"
+body:
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: "📌 Type of Documentation"
+      description: "Specify the type of documentation this issue pertains to."
+      options:
+        - Tutorial
+        - Guide
+        - Reference
+        - FAQ
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "📖 Description"
+      description: "Elaborate on the documentation issue. Highlight the problem or suggest an improvement."
+      placeholder: |
+        🔍 Describe the problem you spotted or the improvement you're suggesting...
+        1. 📄 Mention the file or section '...'
+        2. ⌨️ Describe the incorrect or missing info '....'
+        3. 💡 Suggest the correct information or approach '....'
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "⚖️ Priority"
+      description: "How urgent is this documentation update?"
+      options:
+        - 🟢 Low
+        - 🟡 Medium
+        - 🔴 High
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: "🔍 Difficulty Level"
+      description: "Estimate how challenging this documentation task might be."
+      options:
+        - 🟢 Easy
+        - 🟡 Moderate
+        - 🔴 Challenging
+    validations:
+      required: true
