@@ -1,17 +1,10 @@
 ---
-name: Feature Request
-about: Suggest a new feature or enhancement
-title: ''
-labels: 'enhancement'
+name: Other
+about: Issues that are not categorized yet
+title: "⚡[Other] Give a suitable title"
+labels: 'other'
 assignees: ''
 
 ---
 
-**Feature Description:**
-<!-- Describe the feature you'd like to see. -->
-
-**Problem it solves:**
-<!-- Explain why this feature is needed. -->
-
-**Additional context:**
-<!-- Add any other information or screenshots related to the feature request. -->
+Give a description of the problem/anything that you need to inform us.
