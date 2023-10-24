@@ -50,8 +50,7 @@ body:
       description: Would you like to work on implementing this optimization?
       options:
         - label: "Yes, I'd like to work on this"
-          value: "yes"
         - label: "No, I'm just suggesting"
-          value: "no"
     validations:
       required: true
+
