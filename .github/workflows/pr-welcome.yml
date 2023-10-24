@@ -1,0 +1,26 @@
+name: Welcome PR
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Comment PR
+      uses: actions/github-script@v5
+      with:
+        script: |
+          const { issue } = context;
+          const message = `Hello @${issue.user.login}, and thank you for your contribution! :tada: We appreciate your effort, and to help you get your pull request merged quickly, make sure you've done the following:
+          - Checked for existing issues and pull requests that address the same topic.
+          - Followed the contributing guidelines and code of conduct for this project.
+          - Added tests and documentation as necessary.
+          
+          If you have any questions or need help, feel free to ask. Welcome to the community! :heart:`;
+          github.rest.issues.createComment({
+            issue_number: issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: message
+          });
