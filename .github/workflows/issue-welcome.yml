@@ -1,0 +1,38 @@
+name: Welcome
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const isIssue = context.payload.issue !== undefined;
+            const item = isIssue ? context.payload.issue : context.payload.pull_request;
+            const userType = isIssue ? 'issue' : 'pull request';
+            const message = `
+              Hello @${item.user.login},
+
+              Thank you for your ${userType}! 🎉 Your effort helps improve our project.
+              Our team will review your ${userType} shortly. In the meantime, feel free
+              to check out the [Hacktoberfest Code of Conduct](https://hacktoberfest.digitalocean.com/resources/conduct)
+              and engage with our community.
+
+              We appreciate your contribution and look forward to collaborating with you!
+
+              Best,
+              FahimFBA(python) Team
+            `;
+            github.rest.issues.createComment({
+              issue_number: item.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });
